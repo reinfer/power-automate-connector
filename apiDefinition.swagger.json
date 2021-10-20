@@ -1,0 +1,5301 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Reinfer",
+    "description": "\nImport any message into Re:infer and take automatic actions. Out of the box support for emails, tickets, feedback, chat or phone calls.\nRe:infer unlocks the power of conversational data for everyone. You create custom high-quality machine learning models on conversations visually in minutes with no technical expertise required.\n",
+    "contact": {
+      "name": "Re:infer",
+      "email": "support@reinfer.io",
+      "url": "https://support.reinfer.io"
+    },
+    "version": "7ddb9ccdbbce5cd4"
+  },
+  "x-ms-connector-metadata": [
+    {
+      "propertyName": "Website",
+      "propertyValue": "https://www.reinfer.io"
+    },
+    {
+      "propertyName": "Privacy policy",
+      "propertyValue": "https://www.reinfer.io/legal/privacy-policy"
+    },
+    {
+      "propertyName": "Categories",
+      "propertyValue": "AI;Communication"
+    },
+    {
+      "propertyName": "Developer Docs",
+      "propertyValue": "https://developers.reinfer.io"
+    }
+  ],
+  "externalDocs": {
+    "description": "Find out more at developers.reinfer.io",
+    "url": "https://developers.reinfer.io"
+  },
+  "host": "reinfer.io",
+  "basePath": "/api",
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "ApiKey": {
+      "type": "apiKey",
+      "name": "authorization",
+      "in": "header"
+    }
+  },
+  "security": [
+    {
+      "ApiKey": []
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/sources/{owner}/{source_name}": {
+      "put": {
+        "operationId": "CreateSource",
+        "summary": "Create a source",
+        "description": "Create a source",
+        "tags": [
+          "Sources"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/source_name"
+          },
+          {
+            "in": "body",
+            "name": "CreateSourceRequest",
+            "schema": {
+              "$ref": "#/definitions/CreateSourceRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/CreateSourceResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      },
+      "get": {
+        "operationId": "GetSource",
+        "summary": "Get a source by project and name",
+        "description": "Get a source by project and name",
+        "tags": [
+          "Sources"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/source_name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/GetSourceResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ]
+      },
+      "post": {
+        "operationId": "UpdateSource",
+        "summary": "Update a source",
+        "description": "Update a source",
+        "tags": [
+          "Sources"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/source_name"
+          },
+          {
+            "in": "body",
+            "name": "UpdateSourceRequest",
+            "schema": {
+              "$ref": "#/definitions/UpdateSourceRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/UpdateSourceResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      }
+    },
+    "/v1/sources/id:{source_id}": {
+      "get": {
+        "operationId": "GetSourceById",
+        "summary": "Get a source by ID",
+        "description": "Get a source by ID",
+        "tags": [
+          "Sources"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/source_id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/GetSourceByIdResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "operationId": "DeleteSource",
+        "summary": "Delete a source",
+        "description": "Delete a source",
+        "tags": [
+          "Sources"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/source_id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/DeleteSourceResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/v1/sources": {
+      "get": {
+        "operationId": "GetAllSources",
+        "summary": "Get all sources",
+        "description": "Get all sources",
+        "tags": [
+          "Sources"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/GetAllSourcesResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/v1/sources/{owner}": {
+      "get": {
+        "operationId": "GetAllSourcesInProject",
+        "summary": "Get all sources in a project",
+        "description": "Get all sources in a project",
+        "tags": [
+          "Sources"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/GetAllSourcesInProjectResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/v1/datasets/{owner}/{dataset_name}": {
+      "put": {
+        "operationId": "CreateDataset",
+        "summary": "Create a dataset",
+        "description": "Create a dataset",
+        "tags": [
+          "Datasets"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/dataset_name"
+          },
+          {
+            "in": "body",
+            "name": "CreateDatasetRequest",
+            "schema": {
+              "$ref": "#/definitions/CreateDatasetRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/CreateDatasetResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      },
+      "get": {
+        "operationId": "GetDataset",
+        "summary": "Get a dataset by project and name",
+        "description": "Get a dataset by project and name",
+        "tags": [
+          "Datasets"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/dataset_name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/GetDatasetResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ]
+      },
+      "post": {
+        "operationId": "UpdateDataset",
+        "summary": "Update a dataset",
+        "description": "Update a dataset",
+        "tags": [
+          "Datasets"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/dataset_name"
+          },
+          {
+            "in": "body",
+            "name": "UpdateDatasetRequest",
+            "schema": {
+              "$ref": "#/definitions/UpdateDatasetRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/UpdateDatasetResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "operationId": "DeleteDataset",
+        "summary": "Delete a dataset",
+        "description": "Delete a dataset",
+        "tags": [
+          "Datasets"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/dataset_name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/DeleteDatasetResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/v1/datasets": {
+      "get": {
+        "operationId": "GetAllDatasets",
+        "summary": "Get all datasets",
+        "description": "Get all datasets",
+        "tags": [
+          "Datasets"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/GetAllDatasetsResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/v1/datasets/{owner}": {
+      "get": {
+        "operationId": "GetAllDatasetsInProject",
+        "summary": "Get all datasets in a project",
+        "description": "Get all datasets in a project",
+        "tags": [
+          "Datasets"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/GetAllDatasetsInProjectResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/_private/sources/{owner}/{source_name}/comments": {
+      "put": {
+        "operationId": "AddComments",
+        "summary": "Add a batch of comments",
+        "description": "Add a batch of comments. To overwrite existing comments, you need to specify the latest `context` field.",
+        "tags": [
+          "Comments"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/source_name"
+          },
+          {
+            "in": "body",
+            "name": "AddCommentsRequest",
+            "schema": {
+              "$ref": "#/definitions/AddCommentsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      }
+    },
+    "/v1/sources/{owner}/{source_name}/sync": {
+      "post": {
+        "operationId": "SyncComments",
+        "summary": "Sync a batch of comments",
+        "description": "Sync a batch of comments. Any comments with the same IDs in the source will be overwritten.",
+        "tags": [
+          "Comments"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/source_name"
+          },
+          {
+            "in": "body",
+            "name": "SyncCommentsRequest",
+            "schema": {
+              "$ref": "#/definitions/SyncCommentsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/SyncCommentsResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      }
+    },
+    "/v1/sources/{owner}/{source_name}/sync-raw-emails": {
+      "post": {
+        "operationId": "SyncRawEmails",
+        "summary": "Sync a batch of raw emails",
+        "description": "Sync a batch of raw emails. Any comments with the same IDs in the source will be overwritten.",
+        "tags": [
+          "Comments"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/source_name"
+          },
+          {
+            "in": "body",
+            "name": "SyncRawEmailsRequest",
+            "schema": {
+              "$ref": "#/definitions/SyncRawEmailsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/SyncRawEmailsResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      }
+    },
+    "/v1/sources/{owner}/{source_name}/comments/{comment_id}": {
+      "get": {
+        "operationId": "GetComment",
+        "summary": "Get a comment by ID",
+        "description": "Get a comment by ID",
+        "tags": [
+          "Comments"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/source_name"
+          },
+          {
+            "$ref": "#/parameters/comment_id"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/_private/datasets/{owner}/{dataset_name}/labellers": {
+      "post": {
+        "operationId": "GetAllModelsInDataset",
+        "summary": "Get all the models for a dataset",
+        "description": "Get all the models for a dataset",
+        "tags": [
+          "Models"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/dataset_name"
+          },
+          {
+            "in": "body",
+            "name": "GetAllModelsInDatasetRequest",
+            "schema": {
+              "$ref": "#/definitions/GetAllModelsInDatasetRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/GetAllModelsInDatasetResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      }
+    },
+    "/_private/datasets/{owner}/{dataset_name}/labellers/predict": {
+      "post": {
+        "operationId": "PredictLatest",
+        "summary": "Get predictions from the latest model",
+        "description": "Get predictions from the latest model",
+        "tags": [
+          "Models"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/dataset_name"
+          },
+          {
+            "in": "body",
+            "name": "PredictLatestRequest",
+            "schema": {
+              "$ref": "#/definitions/PredictLatestRequest"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      }
+    },
+    "/v1/datasets/{owner}/{dataset_name}/labellers/{model_version}/predict": {
+      "post": {
+        "operationId": "Predict",
+        "summary": "Get predictions from a specific version of a pinned model",
+        "description": "Get predictions from a specific version of a pinned model",
+        "tags": [
+          "Models"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/dataset_name"
+          },
+          {
+            "$ref": "#/parameters/model_version"
+          },
+          {
+            "in": "body",
+            "name": "PredictRequest",
+            "schema": {
+              "$ref": "#/definitions/PredictRequest"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      }
+    },
+    "/v1/datasets/{owner}/{dataset_name}/labellers/{model_version}/predict-raw-emails": {
+      "post": {
+        "operationId": "PredictRawEmails",
+        "summary": "Get predictions on raw emails from a specific model version",
+        "description": "Get predictions on raw emails from a specific model version",
+        "tags": [
+          "Models"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/dataset_name"
+          },
+          {
+            "$ref": "#/parameters/model_version"
+          },
+          {
+            "in": "body",
+            "name": "PredictRawEmailsRequest",
+            "schema": {
+              "$ref": "#/definitions/PredictRawEmailsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      }
+    },
+    "/v1/datasets/{owner}/{dataset_name}/triggers": {
+      "put": {
+        "operationId": "CreateTrigger",
+        "summary": "Create a trigger",
+        "description": "Create a trigger",
+        "tags": [
+          "Triggers"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/dataset_name"
+          },
+          {
+            "in": "body",
+            "name": "CreateTriggerRequest",
+            "schema": {
+              "$ref": "#/definitions/CreateTriggerRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/CreateTriggerResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      },
+      "get": {
+        "operationId": "GetAllTriggersInDataset",
+        "summary": "Get the available triggers for a dataset",
+        "description": "Get the available triggers for a dataset",
+        "tags": [
+          "Triggers"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/dataset_name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/GetAllTriggersInDatasetResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/v1/datasets/{owner}/{dataset_name}/triggers/{trigger_name}": {
+      "get": {
+        "operationId": "GetTrigger",
+        "summary": "Get a trigger",
+        "description": "Get a trigger",
+        "tags": [
+          "Triggers"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/dataset_name"
+          },
+          {
+            "$ref": "#/parameters/trigger_name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/GetTriggerResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ]
+      },
+      "post": {
+        "operationId": "UpdateTrigger",
+        "summary": "Update a trigger",
+        "description": "Update a trigger",
+        "tags": [
+          "Triggers"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/dataset_name"
+          },
+          {
+            "$ref": "#/parameters/trigger_name"
+          },
+          {
+            "in": "body",
+            "name": "UpdateTriggerRequest",
+            "schema": {
+              "$ref": "#/definitions/UpdateTriggerRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/UpdateTriggerResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "operationId": "DeleteTrigger",
+        "summary": "Delete a trigger",
+        "description": "Delete a trigger",
+        "tags": [
+          "Triggers"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/dataset_name"
+          },
+          {
+            "$ref": "#/parameters/trigger_name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/DeleteTriggerResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/v1/datasets/{owner}/{dataset_name}/triggers/{trigger_name}/fetch": {
+      "post": {
+        "operationId": "PollTrigger",
+        "summary": "Fetch new messages from a trigger",
+        "description": "This operation polls a trigger and fetches any new messages",
+        "tags": [
+          "Triggers"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/dataset_name"
+          },
+          {
+            "$ref": "#/parameters/trigger_name"
+          },
+          {
+            "in": "body",
+            "name": "PollTriggerRequest",
+            "schema": {
+              "$ref": "#/definitions/PollTriggerRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation was successful",
+            "schema": {
+              "$ref": "#/definitions/PollTriggerResponse"
+            }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "x-ms-trigger": "batch",
+        "x-ms-trigger-hint": "To see it work, add a message to the dataset",
+        "consumes": [
+          "application/json"
+        ]
+      }
+    },
+    "/v1/datasets/{owner}/{dataset_name}/triggers/{trigger_name}/advance": {
+      "post": {
+        "operationId": "AdvanceTrigger",
+        "summary": "Advance a trigger",
+        "description": "Advance a trigger",
+        "tags": [
+          "Triggers"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/dataset_name"
+          },
+          {
+            "$ref": "#/parameters/trigger_name"
+          },
+          {
+            "in": "body",
+            "name": "AdvanceTriggerRequest",
+            "schema": {
+              "$ref": "#/definitions/AdvanceTriggerRequest"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      }
+    },
+    "/v1/datasets/{owner}/{dataset_name}/triggers/{trigger_name}/reset": {
+      "post": {
+        "operationId": "ResetTrigger",
+        "summary": "Reset a trigger",
+        "description": "Reset a trigger",
+        "tags": [
+          "Triggers"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/owner"
+          },
+          {
+            "$ref": "#/parameters/dataset_name"
+          },
+          {
+            "$ref": "#/parameters/trigger_name"
+          },
+          {
+            "in": "body",
+            "name": "ResetTriggerRequest",
+            "schema": {
+              "$ref": "#/definitions/ResetTriggerRequest"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "422": {
+            "description": "Error response",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "ErrorResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "message"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "error"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "error"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateSourceRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source"
+      ],
+      "properties": {
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "language": {
+              "type": "string",
+              "enum": [
+                "en",
+                "de",
+                "xlm"
+              ]
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 16384
+            },
+            "should_translate": {
+              "type": "boolean"
+            },
+            "sensitive_properties": {
+              "type": "array",
+              "maxItems": 4096,
+              "items": {
+                "type": "string",
+                "pattern": ".*"
+              }
+            },
+            "bucket_id": {
+              "type": "string",
+              "pattern": ".*"
+            }
+          }
+        }
+      }
+    },
+    "CreateSourceResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "source"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        },
+        "source": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "id",
+            "owner",
+            "name",
+            "language",
+            "title",
+            "description",
+            "should_translate",
+            "sensitive_properties",
+            "created_at",
+            "updated_at"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Source ID",
+              "description": "Unique ID of the source"
+            },
+            "owner": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Project",
+              "description": "The project which owns the source"
+            },
+            "name": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Source Name",
+              "description": "The API name of the source"
+            },
+            "language": {
+              "type": "string",
+              "x-ms-summary": "Source Language",
+              "description": "The language of the messages in the source"
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 128,
+              "x-ms-summary": "Source Title",
+              "description": "A short description of the source"
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 16384,
+              "x-ms-summary": "Source Description",
+              "description": "A longer description of the source"
+            },
+            "should_translate": {
+              "type": "boolean",
+              "x-ms-summary": "Automatic Translation",
+              "description": "Whether messages in this source will be automatically translated"
+            },
+            "sensitive_properties": {
+              "type": "array",
+              "maxItems": 4096,
+              "items": {
+                "type": "string",
+                "pattern": ".*"
+              },
+              "x-ms-summary": "Sensitive User Properties",
+              "description": "User properties that require additional permissions to view"
+            },
+            "created_at": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Timestamp when the source was created",
+              "description": "Timestamp when the source was created"
+            },
+            "updated_at": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Timestamp when the source was last updated",
+              "description": "Timestamp when the source was last updated"
+            },
+            "bucket_id": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Bucket ID"
+            }
+          }
+        }
+      }
+    },
+    "GetSourceResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "source"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        },
+        "source": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "id",
+            "owner",
+            "name",
+            "language",
+            "title",
+            "description",
+            "should_translate",
+            "sensitive_properties",
+            "created_at",
+            "updated_at"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Source ID",
+              "description": "Unique ID of the source"
+            },
+            "owner": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Project",
+              "description": "The project which owns the source"
+            },
+            "name": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Source Name",
+              "description": "The API name of the source"
+            },
+            "language": {
+              "type": "string",
+              "x-ms-summary": "Source Language",
+              "description": "The language of the messages in the source"
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 128,
+              "x-ms-summary": "Source Title",
+              "description": "A short description of the source"
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 16384,
+              "x-ms-summary": "Source Description",
+              "description": "A longer description of the source"
+            },
+            "should_translate": {
+              "type": "boolean",
+              "x-ms-summary": "Automatic Translation",
+              "description": "Whether messages in this source will be automatically translated"
+            },
+            "sensitive_properties": {
+              "type": "array",
+              "maxItems": 4096,
+              "items": {
+                "type": "string",
+                "pattern": ".*"
+              },
+              "x-ms-summary": "Sensitive User Properties",
+              "description": "User properties that require additional permissions to view"
+            },
+            "created_at": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Timestamp when the source was created",
+              "description": "Timestamp when the source was created"
+            },
+            "updated_at": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Timestamp when the source was last updated",
+              "description": "Timestamp when the source was last updated"
+            },
+            "bucket_id": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Bucket ID"
+            }
+          }
+        }
+      }
+    },
+    "GetSourceByIdResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "source"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        },
+        "source": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "id",
+            "owner",
+            "name",
+            "language",
+            "title",
+            "description",
+            "should_translate",
+            "sensitive_properties",
+            "created_at",
+            "updated_at"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Source ID",
+              "description": "Unique ID of the source"
+            },
+            "owner": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Project",
+              "description": "The project which owns the source"
+            },
+            "name": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Source Name",
+              "description": "The API name of the source"
+            },
+            "language": {
+              "type": "string",
+              "x-ms-summary": "Source Language",
+              "description": "The language of the messages in the source"
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 128,
+              "x-ms-summary": "Source Title",
+              "description": "A short description of the source"
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 16384,
+              "x-ms-summary": "Source Description",
+              "description": "A longer description of the source"
+            },
+            "should_translate": {
+              "type": "boolean",
+              "x-ms-summary": "Automatic Translation",
+              "description": "Whether messages in this source will be automatically translated"
+            },
+            "sensitive_properties": {
+              "type": "array",
+              "maxItems": 4096,
+              "items": {
+                "type": "string",
+                "pattern": ".*"
+              },
+              "x-ms-summary": "Sensitive User Properties",
+              "description": "User properties that require additional permissions to view"
+            },
+            "created_at": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Timestamp when the source was created",
+              "description": "Timestamp when the source was created"
+            },
+            "updated_at": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Timestamp when the source was last updated",
+              "description": "Timestamp when the source was last updated"
+            },
+            "bucket_id": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Bucket ID"
+            }
+          }
+        }
+      }
+    },
+    "UpdateSourceRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source"
+      ],
+      "properties": {
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "language": {
+              "type": "string",
+              "enum": [
+                "en",
+                "de",
+                "xlm"
+              ]
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 16384
+            },
+            "should_translate": {
+              "type": "boolean"
+            },
+            "sensitive_properties": {
+              "type": "array",
+              "maxItems": 4096,
+              "items": {
+                "type": "string",
+                "pattern": ".*"
+              }
+            },
+            "bucket_id": {
+              "type": "string",
+              "pattern": ".*"
+            }
+          }
+        }
+      }
+    },
+    "UpdateSourceResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "source"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        },
+        "source": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "id",
+            "owner",
+            "name",
+            "language",
+            "title",
+            "description",
+            "should_translate",
+            "sensitive_properties",
+            "created_at",
+            "updated_at"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Source ID",
+              "description": "Unique ID of the source"
+            },
+            "owner": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Project",
+              "description": "The project which owns the source"
+            },
+            "name": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Source Name",
+              "description": "The API name of the source"
+            },
+            "language": {
+              "type": "string",
+              "x-ms-summary": "Source Language",
+              "description": "The language of the messages in the source"
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 128,
+              "x-ms-summary": "Source Title",
+              "description": "A short description of the source"
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 16384,
+              "x-ms-summary": "Source Description",
+              "description": "A longer description of the source"
+            },
+            "should_translate": {
+              "type": "boolean",
+              "x-ms-summary": "Automatic Translation",
+              "description": "Whether messages in this source will be automatically translated"
+            },
+            "sensitive_properties": {
+              "type": "array",
+              "maxItems": 4096,
+              "items": {
+                "type": "string",
+                "pattern": ".*"
+              },
+              "x-ms-summary": "Sensitive User Properties",
+              "description": "User properties that require additional permissions to view"
+            },
+            "created_at": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Timestamp when the source was created",
+              "description": "Timestamp when the source was created"
+            },
+            "updated_at": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Timestamp when the source was last updated",
+              "description": "Timestamp when the source was last updated"
+            },
+            "bucket_id": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Bucket ID"
+            }
+          }
+        }
+      }
+    },
+    "DeleteSourceResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        }
+      }
+    },
+    "GetAllSourcesResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "sources"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "id",
+              "owner",
+              "name",
+              "language",
+              "title",
+              "description",
+              "should_translate",
+              "sensitive_properties",
+              "created_at",
+              "updated_at"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Source ID",
+                "description": "Unique ID of the source"
+              },
+              "owner": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Project",
+                "description": "The project which owns the source"
+              },
+              "name": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Source Name",
+                "description": "The API name of the source"
+              },
+              "language": {
+                "type": "string",
+                "x-ms-summary": "Source Language",
+                "description": "The language of the messages in the source"
+              },
+              "title": {
+                "type": "string",
+                "maxLength": 128,
+                "x-ms-summary": "Source Title",
+                "description": "A short description of the source"
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 16384,
+                "x-ms-summary": "Source Description",
+                "description": "A longer description of the source"
+              },
+              "should_translate": {
+                "type": "boolean",
+                "x-ms-summary": "Automatic Translation",
+                "description": "Whether messages in this source will be automatically translated"
+              },
+              "sensitive_properties": {
+                "type": "array",
+                "maxItems": 4096,
+                "items": {
+                  "type": "string",
+                  "pattern": ".*"
+                },
+                "x-ms-summary": "Sensitive User Properties",
+                "description": "User properties that require additional permissions to view"
+              },
+              "created_at": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Timestamp when the source was created",
+                "description": "Timestamp when the source was created"
+              },
+              "updated_at": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Timestamp when the source was last updated",
+                "description": "Timestamp when the source was last updated"
+              },
+              "bucket_id": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Bucket ID"
+              }
+            }
+          }
+        }
+      }
+    },
+    "GetAllSourcesInProjectResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "sources"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "id",
+              "owner",
+              "name",
+              "language",
+              "title",
+              "description",
+              "should_translate",
+              "sensitive_properties",
+              "created_at",
+              "updated_at"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Source ID",
+                "description": "Unique ID of the source"
+              },
+              "owner": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Project",
+                "description": "The project which owns the source"
+              },
+              "name": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Source Name",
+                "description": "The API name of the source"
+              },
+              "language": {
+                "type": "string",
+                "x-ms-summary": "Source Language",
+                "description": "The language of the messages in the source"
+              },
+              "title": {
+                "type": "string",
+                "maxLength": 128,
+                "x-ms-summary": "Source Title",
+                "description": "A short description of the source"
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 16384,
+                "x-ms-summary": "Source Description",
+                "description": "A longer description of the source"
+              },
+              "should_translate": {
+                "type": "boolean",
+                "x-ms-summary": "Automatic Translation",
+                "description": "Whether messages in this source will be automatically translated"
+              },
+              "sensitive_properties": {
+                "type": "array",
+                "maxItems": 4096,
+                "items": {
+                  "type": "string",
+                  "pattern": ".*"
+                },
+                "x-ms-summary": "Sensitive User Properties",
+                "description": "User properties that require additional permissions to view"
+              },
+              "created_at": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Timestamp when the source was created",
+                "description": "Timestamp when the source was created"
+              },
+              "updated_at": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Timestamp when the source was last updated",
+                "description": "Timestamp when the source was last updated"
+              },
+              "bucket_id": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Bucket ID"
+              }
+            }
+          }
+        }
+      }
+    },
+    "CreateDatasetRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dataset"
+      ],
+      "properties": {
+        "dataset": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "model_family": {
+              "type": "string",
+              "enum": [
+                "english",
+                "english-dev",
+                "random",
+                "german",
+                "german-dev",
+                "transformer-english",
+                "transformer-xlm"
+              ]
+            },
+            "has_sentiment": {
+              "type": "boolean"
+            },
+            "copy_annotations_from": {
+              "type": "string",
+              "pattern": ".*"
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 16384
+            },
+            "source_ids": {
+              "type": "array",
+              "maxItems": 1024,
+              "items": {
+                "type": "string",
+                "pattern": ".*"
+              }
+            },
+            "entity_kinds": {
+              "type": "array",
+              "maxItems": 1024,
+              "items": {
+                "type": "string",
+                "maxLength": 256
+              },
+              "uniqueItems": true
+            },
+            "entity_defs": {
+              "type": "array",
+              "maxItems": 1024,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "pattern": ".*"
+                  },
+                  "title": {
+                    "type": "string",
+                    "maxLength": 64
+                  },
+                  "inherits_from": {
+                    "type": "array",
+                    "maxItems": 1,
+                    "minItems": 0,
+                    "items": {},
+                    "uniqueItems": true
+                  },
+                  "trainable": {
+                    "type": "boolean"
+                  },
+                  "rules": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "suppressors": {
+                        "type": "array",
+                        "minItems": 0,
+                        "maxItems": 128,
+                        "items": {
+                          "type": "string",
+                          "maxLength": 128
+                        }
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "name",
+                  "title",
+                  "inherits_from",
+                  "trainable"
+                ]
+              },
+              "uniqueItems": true
+            },
+            "label_groups": {
+              "type": "array",
+              "maxItems": 1024,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 64,
+                    "pattern": ".*"
+                  },
+                  "label_defs": {
+                    "type": "array",
+                    "maxItems": 1024,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "maxLength": 64
+                        },
+                        "title": {
+                          "type": "string",
+                          "maxLength": 128
+                        },
+                        "description": {
+                          "type": "string",
+                          "maxLength": 16384
+                        },
+                        "external_id": {
+                          "type": "string",
+                          "maxLength": 128
+                        },
+                        "pretrained": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "name": {
+                              "type": "string",
+                              "maxLength": 64
+                            },
+                            "id": {
+                              "type": "string",
+                              "pattern": ".*"
+                            }
+                          },
+                          "required": [
+                            "id"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ]
+                    },
+                    "uniqueItems": true
+                  }
+                },
+                "required": [
+                  "name",
+                  "label_defs"
+                ]
+              },
+              "uniqueItems": true
+            },
+            "label_defs": {
+              "type": "array",
+              "maxItems": 1024,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "maxLength": 64
+                  },
+                  "title": {
+                    "type": "string",
+                    "maxLength": 128
+                  },
+                  "description": {
+                    "type": "string",
+                    "maxLength": 16384
+                  },
+                  "external_id": {
+                    "type": "string",
+                    "maxLength": 128
+                  },
+                  "pretrained": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "maxLength": 64
+                      },
+                      "id": {
+                        "type": "string",
+                        "pattern": ".*"
+                      }
+                    },
+                    "required": [
+                      "id"
+                    ]
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              },
+              "uniqueItems": true
+            }
+          }
+        }
+      }
+    },
+    "CreateDatasetResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "dataset"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        },
+        "dataset": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Dataset ID",
+              "description": "Unique ID of the dataset"
+            },
+            "owner": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Project",
+              "description": "The project which owns the dataset"
+            },
+            "name": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "API Name",
+              "description": "The API name of the dataset which appears in URLs"
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 128,
+              "x-ms-summary": "Title",
+              "description": "A short description of the dataset"
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 16384,
+              "x-ms-summary": "Description",
+              "description": "A longer description of the dataset"
+            },
+            "source_ids": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "pattern": ".*"
+              },
+              "x-ms-summary": "Sources",
+              "description": "IDs of the sources contained in this dataset"
+            }
+          }
+        }
+      }
+    },
+    "GetDatasetResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "dataset"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        },
+        "dataset": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Dataset ID",
+              "description": "Unique ID of the dataset"
+            },
+            "owner": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Project",
+              "description": "The project which owns the dataset"
+            },
+            "name": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "API Name",
+              "description": "The API name of the dataset which appears in URLs"
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 128,
+              "x-ms-summary": "Title",
+              "description": "A short description of the dataset"
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 16384,
+              "x-ms-summary": "Description",
+              "description": "A longer description of the dataset"
+            },
+            "source_ids": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "pattern": ".*"
+              },
+              "x-ms-summary": "Sources",
+              "description": "IDs of the sources contained in this dataset"
+            }
+          }
+        }
+      }
+    },
+    "UpdateDatasetRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dataset"
+      ],
+      "properties": {
+        "dataset": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "title": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 16384
+            },
+            "source_ids": {
+              "type": "array",
+              "maxItems": 1024,
+              "items": {
+                "type": "string",
+                "pattern": ".*"
+              }
+            },
+            "entity_kinds": {
+              "type": "array",
+              "maxItems": 1024,
+              "items": {
+                "type": "string",
+                "maxLength": 256
+              },
+              "uniqueItems": true
+            },
+            "entity_defs": {
+              "type": "array",
+              "maxItems": 1024,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": ".*"
+                  },
+                  "name": {
+                    "type": "string",
+                    "pattern": ".*"
+                  },
+                  "title": {
+                    "type": "string",
+                    "maxLength": 64
+                  },
+                  "inherits_from": {
+                    "type": "array",
+                    "maxItems": 1,
+                    "minItems": 0,
+                    "items": {},
+                    "uniqueItems": true
+                  },
+                  "trainable": {
+                    "type": "boolean"
+                  },
+                  "rules": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "suppressors": {
+                        "type": "array",
+                        "minItems": 0,
+                        "maxItems": 128,
+                        "items": {
+                          "type": "string",
+                          "maxLength": 128
+                        }
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "name",
+                  "title",
+                  "inherits_from",
+                  "trainable"
+                ]
+              },
+              "uniqueItems": true
+            }
+          }
+        }
+      }
+    },
+    "UpdateDatasetResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "dataset"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        },
+        "dataset": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Dataset ID",
+              "description": "Unique ID of the dataset"
+            },
+            "owner": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "Project",
+              "description": "The project which owns the dataset"
+            },
+            "name": {
+              "type": "string",
+              "pattern": ".*",
+              "x-ms-summary": "API Name",
+              "description": "The API name of the dataset which appears in URLs"
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 128,
+              "x-ms-summary": "Title",
+              "description": "A short description of the dataset"
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 16384,
+              "x-ms-summary": "Description",
+              "description": "A longer description of the dataset"
+            },
+            "source_ids": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "pattern": ".*"
+              },
+              "x-ms-summary": "Sources",
+              "description": "IDs of the sources contained in this dataset"
+            }
+          }
+        }
+      }
+    },
+    "DeleteDatasetResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        }
+      }
+    },
+    "GetAllDatasetsResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "datasets"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        },
+        "datasets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Dataset ID",
+                "description": "Unique ID of the dataset"
+              },
+              "owner": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Project",
+                "description": "The project which owns the dataset"
+              },
+              "name": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "API Name",
+                "description": "The API name of the dataset which appears in URLs"
+              },
+              "title": {
+                "type": "string",
+                "maxLength": 128,
+                "x-ms-summary": "Title",
+                "description": "A short description of the dataset"
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 16384,
+                "x-ms-summary": "Description",
+                "description": "A longer description of the dataset"
+              },
+              "source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "pattern": ".*"
+                },
+                "x-ms-summary": "Sources",
+                "description": "IDs of the sources contained in this dataset"
+              }
+            }
+          }
+        }
+      }
+    },
+    "GetAllDatasetsInProjectResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "datasets"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        },
+        "datasets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Dataset ID",
+                "description": "Unique ID of the dataset"
+              },
+              "owner": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Project",
+                "description": "The project which owns the dataset"
+              },
+              "name": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "API Name",
+                "description": "The API name of the dataset which appears in URLs"
+              },
+              "title": {
+                "type": "string",
+                "maxLength": 128,
+                "x-ms-summary": "Title",
+                "description": "A short description of the dataset"
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 16384,
+                "x-ms-summary": "Description",
+                "description": "A longer description of the dataset"
+              },
+              "source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "pattern": ".*"
+                },
+                "x-ms-summary": "Sources",
+                "description": "IDs of the sources contained in this dataset"
+              }
+            }
+          }
+        }
+      }
+    },
+    "AddCommentsRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "comments"
+      ],
+      "properties": {
+        "comments": {
+          "type": "array",
+          "maxItems": 16384,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "timestamp",
+              "messages"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": ".*"
+              },
+              "timestamp": {
+                "type": "string",
+                "pattern": ".*"
+              },
+              "thread_id": {
+                "type": "string",
+                "pattern": ".*"
+              },
+              "user_properties": {
+                "type": "object",
+                "additionalProperties": false
+              },
+              "messages": {
+                "type": "array",
+                "maxItems": 2048,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "body"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 512,
+                      "x-ms-summary": "From",
+                      "description": "Message sender"
+                    },
+                    "to": {
+                      "type": "array",
+                      "maxItems": 2048,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512
+                      },
+                      "x-ms-summary": "To",
+                      "description": "Message recipients"
+                    },
+                    "cc": {
+                      "type": "array",
+                      "maxItems": 2048,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512
+                      },
+                      "x-ms-summary": "Cc",
+                      "x-ms-visibility": "advanced",
+                      "description": "Message cc field"
+                    },
+                    "bcc": {
+                      "type": "array",
+                      "maxItems": 2048,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512
+                      },
+                      "x-ms-summary": "Bcc",
+                      "x-ms-visibility": "advanced",
+                      "description": "Message bcc field"
+                    },
+                    "sent_at": {
+                      "type": "string",
+                      "pattern": ".*",
+                      "x-ms-summary": "Sent At",
+                      "description": "The time when the message was sent originally"
+                    },
+                    "language": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 8,
+                      "x-ms-summary": "Language",
+                      "description": "The original language of the message"
+                    },
+                    "subject": {
+                      "type": "object",
+                      "required": [
+                        "text"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Text",
+                          "description": "Text content of the message part"
+                        },
+                        "translated_from": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Translated From",
+                          "description": "The original language from which the message was translated, if applicable"
+                        }
+                      }
+                    },
+                    "body": {
+                      "type": "object",
+                      "required": [
+                        "text"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Text",
+                          "description": "Text content of the message part"
+                        },
+                        "translated_from": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Translated From",
+                          "description": "The original language from which the message was translated, if applicable"
+                        }
+                      }
+                    },
+                    "signature": {
+                      "type": "object",
+                      "required": [
+                        "text"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Text",
+                          "description": "Text content of the message part"
+                        },
+                        "translated_from": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Translated From",
+                          "description": "The original language from which the message was translated, if applicable"
+                        }
+                      }
+                    }
+                  }
+                },
+                "x-ms-summary": "Messages"
+              },
+              "text_format": {
+                "type": "string",
+                "enum": [
+                  "markdown",
+                  "plain"
+                ],
+                "x-ms-summary": "Text Format"
+              },
+              "attachments": {
+                "type": "array",
+                "maxItems": 128,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "name",
+                    "size",
+                    "content_type"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 0,
+                      "maxLength": 256,
+                      "x-ms-summary": "Attachment name"
+                    },
+                    "size": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "x-ms-summary": "Attachment size in bytes"
+                    },
+                    "content_type": {
+                      "type": "string",
+                      "minLength": 0,
+                      "maxLength": 256,
+                      "x-ms-summary": "Attachment MIME Content-Type"
+                    }
+                  }
+                },
+                "x-ms-summary": "Attachments"
+              }
+            }
+          }
+        }
+      }
+    },
+    "SyncCommentsRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "comments"
+      ],
+      "properties": {
+        "comments": {
+          "type": "array",
+          "maxItems": 16384,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "timestamp",
+              "messages"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": ".*"
+              },
+              "timestamp": {
+                "type": "string",
+                "pattern": ".*"
+              },
+              "thread_id": {
+                "type": "string",
+                "pattern": ".*"
+              },
+              "user_properties": {
+                "type": "object",
+                "additionalProperties": false
+              },
+              "messages": {
+                "type": "array",
+                "maxItems": 2048,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "body"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 512,
+                      "x-ms-summary": "From",
+                      "description": "Message sender"
+                    },
+                    "to": {
+                      "type": "array",
+                      "maxItems": 2048,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512
+                      },
+                      "x-ms-summary": "To",
+                      "description": "Message recipients"
+                    },
+                    "cc": {
+                      "type": "array",
+                      "maxItems": 2048,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512
+                      },
+                      "x-ms-summary": "Cc",
+                      "x-ms-visibility": "advanced",
+                      "description": "Message cc field"
+                    },
+                    "bcc": {
+                      "type": "array",
+                      "maxItems": 2048,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512
+                      },
+                      "x-ms-summary": "Bcc",
+                      "x-ms-visibility": "advanced",
+                      "description": "Message bcc field"
+                    },
+                    "sent_at": {
+                      "type": "string",
+                      "pattern": ".*",
+                      "x-ms-summary": "Sent At",
+                      "description": "The time when the message was sent originally"
+                    },
+                    "language": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 8,
+                      "x-ms-summary": "Language",
+                      "description": "The original language of the message"
+                    },
+                    "subject": {
+                      "type": "object",
+                      "required": [
+                        "text"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Text",
+                          "description": "Text content of the message part"
+                        },
+                        "translated_from": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Translated From",
+                          "description": "The original language from which the message was translated, if applicable"
+                        }
+                      }
+                    },
+                    "body": {
+                      "type": "object",
+                      "required": [
+                        "text"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Text",
+                          "description": "Text content of the message part"
+                        },
+                        "translated_from": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Translated From",
+                          "description": "The original language from which the message was translated, if applicable"
+                        }
+                      }
+                    },
+                    "signature": {
+                      "type": "object",
+                      "required": [
+                        "text"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Text",
+                          "description": "Text content of the message part"
+                        },
+                        "translated_from": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Translated From",
+                          "description": "The original language from which the message was translated, if applicable"
+                        }
+                      }
+                    }
+                  }
+                },
+                "x-ms-summary": "Messages"
+              },
+              "text_format": {
+                "type": "string",
+                "enum": [
+                  "markdown",
+                  "plain"
+                ],
+                "x-ms-summary": "Text Format"
+              },
+              "attachments": {
+                "type": "array",
+                "maxItems": 128,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "name",
+                    "size",
+                    "content_type"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 0,
+                      "maxLength": 256,
+                      "x-ms-summary": "Attachment name"
+                    },
+                    "size": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "x-ms-summary": "Attachment size in bytes"
+                    },
+                    "content_type": {
+                      "type": "string",
+                      "minLength": 0,
+                      "maxLength": 256,
+                      "x-ms-summary": "Attachment MIME Content-Type"
+                    }
+                  }
+                },
+                "x-ms-summary": "Attachments"
+              }
+            }
+          }
+        }
+      }
+    },
+    "SyncCommentsResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        }
+      }
+    },
+    "SyncRawEmailsRequest": {
+      "type": "object",
+      "required": [
+        "documents"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "documents": {
+          "type": "array",
+          "maxItems": 16384,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "raw_email"
+            ],
+            "properties": {
+              "raw_email": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "headers",
+                  "body"
+                ],
+                "properties": {
+                  "headers": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "raw": {
+                        "type": "string",
+                        "maxLength": 65536,
+                        "description": "The raw email headers, given as a single string, with each header on its own line",
+                        "x-ms-summary": "Raw Headers"
+                      },
+                      "parsed": {
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "description": "An object containing the headers of the email",
+                    "x-ms-summary": "Email Headers"
+                  },
+                  "body": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "plain": {
+                        "type": "string",
+                        "maxLength": 65536
+                      },
+                      "html": {
+                        "type": "string",
+                        "maxLength": 33554432
+                      }
+                    },
+                    "description": "An object containing the main body of the email",
+                    "x-ms-summary": "Email Body"
+                  },
+                  "attachments": {
+                    "type": "array",
+                    "maxItems": 128,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "name",
+                        "size",
+                        "content_type"
+                      ],
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 256,
+                          "x-ms-summary": "Attachment name"
+                        },
+                        "size": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "x-ms-summary": "Attachment size in bytes"
+                        },
+                        "content_type": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 256,
+                          "x-ms-summary": "Attachment MIME Content-Type"
+                        }
+                      }
+                    },
+                    "x-ms-summary": "Attachments"
+                  }
+                },
+                "description": "An object containing the main body of the email",
+                "x-ms-summary": "Email"
+              },
+              "comment_id": {
+                "type": "string",
+                "pattern": ".*",
+                "description": "\nIdentifies a comment uniquely. If no comment ID is provided, Re:infer will\ngenerate the comment ID from the email's message ID. The format is described in\nthe Comment Reference.",
+                "x-ms-summary": "Comment ID"
+              },
+              "user_properties": {
+                "type": "object",
+                "additionalProperties": false
+              }
+            }
+          },
+          "description": "A batch of at most 4096 raw emails",
+          "x-ms-summary": "Raw Emails"
+        },
+        "include_comments": {
+          "type": "boolean",
+          "description": "If set to true, the comments parsed from the emailswill be returned in the response body",
+          "x-ms-summary": "Include Comments"
+        },
+        "transform_tag": {
+          "type": "string",
+          "pattern": ".*",
+          "description": "A tag identifying the email integration sending the data. You should have received this tag during integration configuration setup.",
+          "x-ms-summary": "Transform Tag"
+        },
+        "override_user_properties": {
+          "type": "array",
+          "maxItems": 128,
+          "items": {
+            "type": "string",
+            "pattern": ".*"
+          },
+          "x-ms-summary": "Override User Properties"
+        }
+      }
+    },
+    "SyncRawEmailsResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        }
+      }
+    },
+    "GetAllModelsInDatasetRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "older_than_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "include_deleted": {
+          "type": "boolean"
+        }
+      }
+    },
+    "GetAllModelsInDatasetResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "dataset_status",
+        "labellers"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        },
+        "dataset_status": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "labellers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "version",
+              "model_id",
+              "trained_time"
+            ],
+            "properties": {
+              "version": {
+                "type": "integer",
+                "minimum": 0,
+                "x-ms-summary": "Model Version",
+                "description": "The version of the model"
+              },
+              "model_id": {
+                "type": "string",
+                "x-ms-summary": "Model Kind",
+                "description": "The type of model"
+              },
+              "trained_time": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Trained Timestamp",
+                "description": "Timestamp when the model was trained"
+              }
+            }
+          }
+        }
+      }
+    },
+    "PredictLatestRequest": {
+      "type": "object",
+      "required": [
+        "documents"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "documents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "messages"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "timestamp": {
+                "type": "string",
+                "pattern": ".*"
+              },
+              "user_properties": {
+                "type": "object",
+                "additionalProperties": false
+              },
+              "messages": {
+                "type": "array",
+                "maxItems": 2048,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "body"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 512,
+                      "x-ms-summary": "From",
+                      "description": "Message sender"
+                    },
+                    "to": {
+                      "type": "array",
+                      "maxItems": 2048,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512
+                      },
+                      "x-ms-summary": "To",
+                      "description": "Message recipients"
+                    },
+                    "cc": {
+                      "type": "array",
+                      "maxItems": 2048,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512
+                      },
+                      "x-ms-summary": "Cc",
+                      "x-ms-visibility": "advanced",
+                      "description": "Message cc field"
+                    },
+                    "bcc": {
+                      "type": "array",
+                      "maxItems": 2048,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512
+                      },
+                      "x-ms-summary": "Bcc",
+                      "x-ms-visibility": "advanced",
+                      "description": "Message bcc field"
+                    },
+                    "sent_at": {
+                      "type": "string",
+                      "pattern": ".*",
+                      "x-ms-summary": "Sent At",
+                      "description": "The time when the message was sent originally"
+                    },
+                    "language": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 8,
+                      "x-ms-summary": "Language",
+                      "description": "The original language of the message"
+                    },
+                    "subject": {
+                      "type": "object",
+                      "required": [
+                        "text"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Text",
+                          "description": "Text content of the message part"
+                        },
+                        "translated_from": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Translated From",
+                          "description": "The original language from which the message was translated, if applicable"
+                        }
+                      }
+                    },
+                    "body": {
+                      "type": "object",
+                      "required": [
+                        "text"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Text",
+                          "description": "Text content of the message part"
+                        },
+                        "translated_from": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Translated From",
+                          "description": "The original language from which the message was translated, if applicable"
+                        }
+                      }
+                    },
+                    "signature": {
+                      "type": "object",
+                      "required": [
+                        "text"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Text",
+                          "description": "Text content of the message part"
+                        },
+                        "translated_from": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Translated From",
+                          "description": "The original language from which the message was translated, if applicable"
+                        }
+                      }
+                    }
+                  }
+                },
+                "x-ms-summary": "Messages"
+              },
+              "text_format": {
+                "type": "string",
+                "enum": [
+                  "markdown",
+                  "plain"
+                ],
+                "x-ms-summary": "Text Format"
+              }
+            }
+          },
+          "maxItems": 4096
+        },
+        "threshold": {},
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64,
+                  "pattern": ".*"
+                },
+                "maxItems": 64
+              },
+              "threshold": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          },
+          "maxItems": 4096
+        }
+      }
+    },
+    "PredictRequest": {
+      "type": "object",
+      "required": [
+        "documents"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "documents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "messages"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "timestamp": {
+                "type": "string",
+                "pattern": ".*"
+              },
+              "user_properties": {
+                "type": "object",
+                "additionalProperties": false
+              },
+              "messages": {
+                "type": "array",
+                "maxItems": 2048,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "body"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 512,
+                      "x-ms-summary": "From",
+                      "description": "Message sender"
+                    },
+                    "to": {
+                      "type": "array",
+                      "maxItems": 2048,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512
+                      },
+                      "x-ms-summary": "To",
+                      "description": "Message recipients"
+                    },
+                    "cc": {
+                      "type": "array",
+                      "maxItems": 2048,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512
+                      },
+                      "x-ms-summary": "Cc",
+                      "x-ms-visibility": "advanced",
+                      "description": "Message cc field"
+                    },
+                    "bcc": {
+                      "type": "array",
+                      "maxItems": 2048,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512
+                      },
+                      "x-ms-summary": "Bcc",
+                      "x-ms-visibility": "advanced",
+                      "description": "Message bcc field"
+                    },
+                    "sent_at": {
+                      "type": "string",
+                      "pattern": ".*",
+                      "x-ms-summary": "Sent At",
+                      "description": "The time when the message was sent originally"
+                    },
+                    "language": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 8,
+                      "x-ms-summary": "Language",
+                      "description": "The original language of the message"
+                    },
+                    "subject": {
+                      "type": "object",
+                      "required": [
+                        "text"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Text",
+                          "description": "Text content of the message part"
+                        },
+                        "translated_from": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Translated From",
+                          "description": "The original language from which the message was translated, if applicable"
+                        }
+                      }
+                    },
+                    "body": {
+                      "type": "object",
+                      "required": [
+                        "text"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Text",
+                          "description": "Text content of the message part"
+                        },
+                        "translated_from": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Translated From",
+                          "description": "The original language from which the message was translated, if applicable"
+                        }
+                      }
+                    },
+                    "signature": {
+                      "type": "object",
+                      "required": [
+                        "text"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Text",
+                          "description": "Text content of the message part"
+                        },
+                        "translated_from": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 65536,
+                          "x-ms-summary": "Translated From",
+                          "description": "The original language from which the message was translated, if applicable"
+                        }
+                      }
+                    }
+                  }
+                },
+                "x-ms-summary": "Messages"
+              },
+              "text_format": {
+                "type": "string",
+                "enum": [
+                  "markdown",
+                  "plain"
+                ],
+                "x-ms-summary": "Text Format"
+              }
+            }
+          },
+          "maxItems": 4096
+        },
+        "threshold": {},
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64,
+                  "pattern": ".*"
+                },
+                "maxItems": 64
+              },
+              "threshold": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          },
+          "maxItems": 4096
+        }
+      }
+    },
+    "PredictRawEmailsRequest": {
+      "type": "object",
+      "required": [
+        "documents"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "documents": {
+          "type": "array",
+          "maxItems": 4096,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "raw_email"
+            ],
+            "properties": {
+              "raw_email": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "headers",
+                  "body"
+                ],
+                "properties": {
+                  "headers": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "raw": {
+                        "type": "string",
+                        "maxLength": 65536,
+                        "description": "The raw email headers, given as a single string, with each header on its own line",
+                        "x-ms-summary": "Raw Headers"
+                      },
+                      "parsed": {
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "description": "An object containing the headers of the email",
+                    "x-ms-summary": "Email Headers"
+                  },
+                  "body": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "plain": {
+                        "type": "string",
+                        "maxLength": 65536
+                      },
+                      "html": {
+                        "type": "string",
+                        "maxLength": 33554432
+                      }
+                    },
+                    "description": "An object containing the main body of the email",
+                    "x-ms-summary": "Email Body"
+                  },
+                  "attachments": {
+                    "type": "array",
+                    "maxItems": 128,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "name",
+                        "size",
+                        "content_type"
+                      ],
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 256,
+                          "x-ms-summary": "Attachment name"
+                        },
+                        "size": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "x-ms-summary": "Attachment size in bytes"
+                        },
+                        "content_type": {
+                          "type": "string",
+                          "minLength": 0,
+                          "maxLength": 256,
+                          "x-ms-summary": "Attachment MIME Content-Type"
+                        }
+                      }
+                    },
+                    "x-ms-summary": "Attachments"
+                  }
+                },
+                "description": "An object containing the main body of the email",
+                "x-ms-summary": "Email"
+              },
+              "user_properties": {
+                "type": "object",
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "threshold": {},
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64,
+                  "pattern": ".*"
+                },
+                "maxItems": 64
+              },
+              "threshold": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          },
+          "maxItems": 4096
+        },
+        "include_comments": {
+          "type": "boolean"
+        },
+        "transform_tag": {
+          "type": "string",
+          "pattern": ".*",
+          "description": "A tag identifying the email integration sending the data. You should have received this tag during integration configuration setup.",
+          "x-ms-summary": "Transform Tag"
+        }
+      }
+    },
+    "CreateTriggerRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "trigger"
+      ],
+      "properties": {
+        "trigger": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "pattern": ".*"
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 16384
+            },
+            "comment_filter": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "timestamp": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "minimum": {
+                      "type": "string",
+                      "pattern": ".*"
+                    },
+                    "maximum": {
+                      "type": "string",
+                      "pattern": ".*"
+                    }
+                  }
+                },
+                "reviewed": {
+                  "type": "string",
+                  "enum": [
+                    "only_reviewed",
+                    "only_unreviewed"
+                  ]
+                },
+                "sources": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "pattern": ".*"
+                  },
+                  "minItems": 1,
+                  "maxItems": 128
+                },
+                "messages": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "from": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "not_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "domain_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "domain_not_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        }
+                      }
+                    },
+                    "recipient": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "not_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "domain_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "domain_not_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        }
+                      }
+                    },
+                    "to": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "not_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        }
+                      }
+                    },
+                    "cc": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "not_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        }
+                      }
+                    },
+                    "bcc": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "not_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        }
+                      }
+                    }
+                  }
+                },
+                "user_properties": {
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "trigger_exceptions": {
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "annotations": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "labels": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "not_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "model": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "version"
+              ],
+              "properties": {
+                "version": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "label_thresholds": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "name",
+                      "threshold"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 64,
+                          "pattern": ".*"
+                        },
+                        "maxItems": 64
+                      },
+                      "threshold": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      }
+                    }
+                  },
+                  "minItems": 1,
+                  "maxItems": 4096
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "CreateTriggerResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "trigger"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        },
+        "trigger": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": ".*"
+            },
+            "owner": {
+              "type": "string",
+              "pattern": ".*"
+            },
+            "name": {
+              "type": "string",
+              "pattern": ".*"
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 16384
+            }
+          }
+        }
+      }
+    },
+    "GetTriggerResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "trigger"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        },
+        "trigger": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": ".*"
+            },
+            "owner": {
+              "type": "string",
+              "pattern": ".*"
+            },
+            "name": {
+              "type": "string",
+              "pattern": ".*"
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 16384
+            }
+          }
+        }
+      }
+    },
+    "GetAllTriggersInDatasetResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "triggers"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        },
+        "triggers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": ".*"
+              },
+              "owner": {
+                "type": "string",
+                "pattern": ".*"
+              },
+              "name": {
+                "type": "string",
+                "pattern": ".*"
+              },
+              "title": {
+                "type": "string",
+                "maxLength": 128
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 16384
+              }
+            }
+          }
+        }
+      }
+    },
+    "UpdateTriggerRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "trigger"
+      ],
+      "properties": {
+        "trigger": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string",
+              "pattern": ".*"
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 16384
+            },
+            "comment_filter": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "timestamp": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "minimum": {
+                      "type": "string",
+                      "pattern": ".*"
+                    },
+                    "maximum": {
+                      "type": "string",
+                      "pattern": ".*"
+                    }
+                  }
+                },
+                "reviewed": {
+                  "type": "string",
+                  "enum": [
+                    "only_reviewed",
+                    "only_unreviewed"
+                  ]
+                },
+                "sources": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "pattern": ".*"
+                  },
+                  "minItems": 1,
+                  "maxItems": 128
+                },
+                "messages": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "from": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "not_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "domain_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "domain_not_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        }
+                      }
+                    },
+                    "recipient": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "not_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "domain_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "domain_not_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        }
+                      }
+                    },
+                    "to": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "not_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        }
+                      }
+                    },
+                    "cc": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "not_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        }
+                      }
+                    },
+                    "bcc": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "not_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        }
+                      }
+                    }
+                  }
+                },
+                "user_properties": {
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "trigger_exceptions": {
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "annotations": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "labels": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        },
+                        "not_one_of": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 65536
+                          },
+                          "minItems": 1,
+                          "maxItems": 128
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "model": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "version"
+              ],
+              "properties": {
+                "version": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "label_thresholds": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "name",
+                      "threshold"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 64,
+                          "pattern": ".*"
+                        },
+                        "maxItems": 64
+                      },
+                      "threshold": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      }
+                    }
+                  },
+                  "minItems": 1,
+                  "maxItems": 4096
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "UpdateTriggerResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "trigger"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        },
+        "trigger": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": ".*"
+            },
+            "owner": {
+              "type": "string",
+              "pattern": ".*"
+            },
+            "name": {
+              "type": "string",
+              "pattern": ".*"
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "description": {
+              "type": "string",
+              "maxLength": 16384
+            }
+          }
+        }
+      }
+    },
+    "DeleteTriggerResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        }
+      }
+    },
+    "PollTriggerRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "size"
+      ],
+      "properties": {
+        "size": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1024,
+          "description": "The number of comments to fetch from this trigger",
+          "x-ms-summary": "Batch Size"
+        },
+        "max_filtered": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1024,
+          "description": "How many comments to skip if if they don't match the trigger's comment filter",
+          "x-ms-summary": "Max Filtered",
+          "x-ms-visibility": "advanced"
+        }
+      }
+    },
+    "PollTriggerResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "filtered",
+        "sequence_id",
+        "results"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok"
+          ],
+          "x-ms-visibility": "internal",
+          "default": "ok"
+        },
+        "filtered": {
+          "type": "number"
+        },
+        "sequence_id": {
+          "type": "string",
+          "pattern": ".*",
+          "x-ms-summary": "Sequence ID",
+          "description": "Sequence ID used to advance the trigger once comments are processed"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "comment": {
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": ".*",
+                    "x-ms-summary": "Comment ID",
+                    "description": "ID of the comment unique within a source"
+                  },
+                  "source_id": {
+                    "type": "string",
+                    "pattern": ".*",
+                    "x-ms-summary": "Source ID",
+                    "description": "ID of the source containing the comment"
+                  },
+                  "timestamp": {
+                    "type": "string",
+                    "pattern": ".*",
+                    "x-ms-summary": "Comment Timestamp",
+                    "description": "User supplied comment timestamp"
+                  }
+                }
+              },
+              "labels": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": true
+                },
+                "x-ms-summary": "Labels"
+              },
+              "entities": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": true
+                },
+                "x-ms-summary": "Entities"
+              },
+              "sequence_id": {
+                "type": "string",
+                "pattern": ".*",
+                "x-ms-summary": "Comment Sequence ID",
+                "description": "Sequence ID for this comment"
+              }
+            }
+          }
+        }
+      }
+    },
+    "AdvanceTriggerRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sequence_id"
+      ],
+      "properties": {
+        "sequence_id": {
+          "type": "string",
+          "pattern": ".*",
+          "x-ms-summary": "Sequence ID"
+        }
+      }
+    },
+    "ResetTriggerRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "to_comment_created_at"
+      ],
+      "properties": {
+        "to_comment_created_at": {
+          "type": "string",
+          "pattern": ".*"
+        }
+      }
+    }
+  },
+  "parameters": {
+    "owner": {
+      "in": "path",
+      "name": "owner",
+      "description": "The name of the project which contains the resource",
+      "x-ms-summary": "Project Name",
+      "x-ms-url-encoding": "single",
+      "required": true,
+      "type": "string",
+      "pattern": "^[A-Za-z0-9-_.]{1,1024}$",
+      "x-ms-dynamic-values": {
+        "operationId": "GetAllSources",
+        "value-collection": "sources",
+        "value-path": "owner",
+        "value-title": "owner",
+        "parameters": {}
+      }
+    },
+    "source_id": {
+      "in": "path",
+      "name": "source_id",
+      "description": "Source ID",
+      "x-ms-summary": "Source ID",
+      "x-ms-url-encoding": "single",
+      "required": true,
+      "type": "string",
+      "pattern": "^[0-9a-f]{16}$",
+      "x-ms-dynamic-values": {
+        "operationId": "GetAllSources",
+        "value-collection": "sources",
+        "value-path": "id",
+        "value-title": "name",
+        "parameters": {}
+      }
+    },
+    "source_name": {
+      "in": "path",
+      "name": "source_name",
+      "description": "The name of the source",
+      "x-ms-summary": "Source Name",
+      "x-ms-url-encoding": "single",
+      "required": true,
+      "type": "string",
+      "pattern": "^[A-Za-z0-9-_]{1,256}$",
+      "x-ms-dynamic-values": {
+        "operationId": "GetAllSourcesInProject",
+        "value-collection": "sources",
+        "value-path": "name",
+        "value-title": "name",
+        "parameters": {
+          "owner": {
+            "parameter": "owner"
+          }
+        }
+      }
+    },
+    "comment_id": {
+      "in": "path",
+      "name": "comment_id",
+      "description": "Comment ID",
+      "x-ms-summary": "Comment ID",
+      "x-ms-url-encoding": "single",
+      "required": true,
+      "type": "string",
+      "pattern": "^[\\w\\x21-\\x2e\\x3a-\\x40\\x5b-\\x60\\x7b-\\x7e]{1,1024}$"
+    },
+    "dataset_name": {
+      "in": "path",
+      "name": "dataset_name",
+      "description": "The name of the dataset",
+      "x-ms-summary": "Dataset Name",
+      "x-ms-url-encoding": "single",
+      "required": true,
+      "type": "string",
+      "pattern": "^[A-Za-z0-9-_]{1,256}$",
+      "x-ms-dynamic-values": {
+        "operationId": "GetAllDatasetsInProject",
+        "value-collection": "datasets",
+        "value-path": "name",
+        "value-title": "name",
+        "parameters": {
+          "owner": {
+            "parameter": "owner"
+          }
+        }
+      }
+    },
+    "trigger_name": {
+      "in": "path",
+      "name": "trigger_name",
+      "description": "Trigger name",
+      "x-ms-summary": "Trigger Name",
+      "x-ms-url-encoding": "single",
+      "required": true,
+      "type": "string",
+      "pattern": "^[A-Za-z0-9-_]{1,256}$",
+      "x-ms-dynamic-values": {
+        "operationId": "GetAllTriggersInDataset",
+        "value-collection": "triggers",
+        "value-path": "name",
+        "value-title": "name",
+        "parameters": {
+          "owner": {
+            "parameter": "owner"
+          },
+          "dataset_name": {
+            "parameter": "dataset_name"
+          }
+        }
+      }
+    },
+    "model_version": {
+      "in": "path",
+      "name": "model_version",
+      "description": "The version of a pinned model to use",
+      "x-ms-summary": "Model Version",
+      "x-ms-url-encoding": "single",
+      "required": true,
+      "type": "integer"
+    }
+  }
+}

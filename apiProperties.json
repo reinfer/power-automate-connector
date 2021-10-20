@@ -1,0 +1,23 @@
+{
+  "properties": {
+    "connectionParameters": {
+      "api_key": {
+        "type": "securestring",
+        "uiDefinition": {
+          "displayName": "Authorization Header",
+          "description": "The Authorization Header for this api",
+          "tooltip": "Provide your Authorization Header",
+          "constraints": {
+            "tabIndex": 2,
+            "clearText": false,
+            "required": "true"
+          }
+        }
+      }
+    },
+    "iconBrandColor": "#784dff",
+    "capabilities": [],
+    "publisher": "Reinfer Ltd.",
+    "stackOwner": "Reinfer Ltd."
+  }
+}
